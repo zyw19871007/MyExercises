@@ -7,20 +7,53 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private List<String> list = new ArrayList<>();
+    private String listS[] = {"1", "2", "3", "4", "5", "6"};
+    private MyListView myListView;
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.main);
-        LayoutInflater layoutInflater = LayoutInflater.from(this);
-        View view = layoutInflater.inflate(R.layout.button_layout, null);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        linearLayout.addView(view,layoutParams);
+        list.add("a1");
+        list.add("a2");
+        list.add("a3");
+        list.add("a2");
+        list.add("a3");
+        list.add("a3");
+        list.add("a4");
+        list.add("a5");
+        list.add("a6");
+        list.add("a8");
+        list.add("a7");
+        myListView = (MyListView) findViewById(R.id.myListView);
+        adapter = new ArrayAdapter<>(this, R.layout.item_listview, list);
+        myListView.setAdapter(adapter);
+        myListView.setOnDelListener(new MyListView.OnDelListener() {
+            @Override
+            public void onDelete(int index) {
+                list.remove(index);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+//        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.main);
+//        LayoutInflater layoutInflater = LayoutInflater.from(this);
+//        View view = layoutInflater.inflate(R.layout.button_layout, null);
+//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        linearLayout.addView(view,layoutParams);
+
     }
 
     @Override

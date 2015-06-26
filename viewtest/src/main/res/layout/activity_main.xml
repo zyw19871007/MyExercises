@@ -1,9 +1,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main"
     android:orientation="vertical">
 
+    <com.shadow.zyw.sdu.viewtest.TitleView
+        android:id="@+id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.shadow.zyw.sdu.viewtest.TitleView>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/compose_bg"
+        android:text="button" />
+
+    <com.shadow.zyw.sdu.viewtest.MyView
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <com.shadow.zyw.sdu.viewtest.CountView
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <com.shadow.zyw.sdu.viewtest.MyListView
+        android:id="@+id/myListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></com.shadow.zyw.sdu.viewtest.MyListView>
 
 </LinearLayout>
