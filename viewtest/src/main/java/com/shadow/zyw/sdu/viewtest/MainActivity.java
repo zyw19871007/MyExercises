@@ -38,7 +38,7 @@ public class MainActivity extends ActionBarActivity {
         list.add("a8");
         list.add("a7");
         myListView = (MyListView) findViewById(R.id.myListView);
-        adapter = new ArrayAdapter<>(this, R.layout.item_listview, list);
+        adapter = new MyAdapter(this, 0, list);
         myListView.setAdapter(adapter);
         myListView.setOnDelListener(new MyListView.OnDelListener() {
             @Override
