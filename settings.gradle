@@ -1,1 +1,1 @@
-include ':activitylifetime', ':fragments', ':fragmentmobilepad', ':fragmenttabs', ':viewtest', ':services', ':services_assist'
+include ':activitylifetime', ':fragments', ':fragmentmobilepad', ':fragmenttabs', ':viewtest', ':services', ':services_assist', ':intentobject', ':asyncmsg'
